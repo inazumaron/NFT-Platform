@@ -1,0 +1,29 @@
+<nz-layout class="layout">
+  <nz-sider>
+    <div class="logo">Quick Links</div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li routerLink="/profile" nz-menu-item>
+        <i nz-icon nzType="user" nzTheme="outline"></i>
+        <span> Profile </span>
+      </li>
+      <li routerLink="/market" nz-menu-item>
+        <i nz-icon nzType="dollar" nzTheme="outline"></i>
+        <span> Market </span>
+      </li>
+      <li routerLink="/offers" nz-menu-item>
+        <i nz-icon nzType="notification" nzTheme="outline"></i>
+        <span> Offers </span>
+      </li>
+      <li routerLink="/transactions" nz-menu-item>
+        <i nz-icon nzType="file"></i>
+        <span> Transactions </span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout class="right-layout">
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer>©2021 &middot; Something here</nz-footer>
+  </nz-layout>
+</nz-layout>
