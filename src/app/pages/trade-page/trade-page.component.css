@@ -1,0 +1,10 @@
+.bgGray {
+    background-color: gray;
+}
+.smallHeight {
+    min-height: 140px;
+}
+
+.medHeight {
+    min-height: 280px;
+}
