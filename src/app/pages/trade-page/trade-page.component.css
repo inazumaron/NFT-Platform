@@ -8,3 +8,16 @@
 .medHeight {
     min-height: 280px;
 }
+
+.cont {
+    background-color: white;
+    margin: 20px;
+}
+
+.chatBox {
+    background-color: white;
+    border-radius: 10px;
+    height: 190px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

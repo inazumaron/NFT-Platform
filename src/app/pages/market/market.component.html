@@ -10,7 +10,7 @@
             <div nz-col nzSpan="4">{{ item.description }}</div>
             <div nz-col nzSpan="4">{{ item.seller }}</div>
             <div nz-col nzSpan="4">{{ item.rating }}</div>
-            <div nz-col nzSpan="2"><button nz-button nzType="default">Trade</button></div>
+            <div nz-col nzSpan="2"><button nz-button nzType="default" (click)="trade(item)">Trade</button></div>
             <br>
             <nz-divider></nz-divider>
         </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-market',
@@ -13,9 +14,12 @@ export class MarketComponent implements OnInit {
     { 'name': 'nft3', 'price':80, 'seller':'seller3', 'description':'something', 'rating':5}
   ]
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit() {
   }
 
+  trade(item) {
+    this.route.navigate(['/trade',{name: item.name, price: item.price}]);
+  }
 }

@@ -27,6 +27,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 import en from '@angular/common/locales/en';
+import { UploadComponent } from './pages/upload/upload.component';
 
 registerLocaleData(en);
 
@@ -39,7 +40,8 @@ registerLocaleData(en);
     OffersComponent,
     TransactionsComponent,
     TradePageComponent,
-    MarketComponent
+    MarketComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

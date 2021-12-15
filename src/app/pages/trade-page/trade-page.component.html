@@ -1,27 +1,40 @@
 <div nz-row>
-    <div nz-col nzSpan="2" nzOffset="1">
+    <div nz-col nzSpan="2" nzOffset="2">
         <button nz-button type="default">Back</button>
     </div>
-    <div nz-col nzSpan="2" nzOffset="18">
+    <div nz-col nzSpan="2" nzOffset="17">
         <button nz-button type="primary">Trade</button>
     </div>
     <br>
     <br>
     <div nz-col nzSpan="8" nzOffset="2" class="bgGray medHeight">
-        Item 1 here
+        <div class="cont">
+            <div *ngIf="price.length">
+                {{ price }}
+            </div>
+        </div>
     </div>
     <div nz-col nzSpan="8" nzOffset="4" class="bgGray medHeight">
-        Item 2 here
+        <div class="cont">
+            <div *ngIf="item.length">
+                {{ item }}
+            </div>
+        </div>
     </div>
-    <br>
     <div nz-col nzSpan="8" nzOffset="4">
-        Item 1 button
+        <button nz-button nzType="default">Deposit</button>
     </div>
-    <div nz-col nzSpan="8" nzOffset="4">
-        
-    </div>
-    <br>
     <div nz-col nzSpan="16" nzOffset="4" class="bgGray medHeight">
-        Chat goes here
+        <div nz-row>
+            <div nz-col nzSpan="22" nzOffset="1" class="chatBox">
+                Chat goes here
+            </div>
+            <div nz-col nzSpan="20" nzOffset="1">
+                <input type="text" nz-input placeholder="Input here to chat" />
+            </div>
+            <div nz-col nzSpan="2">
+                <button nz-button nzType = "default">Send</button>
+            </div>
+        </div>
     </div>
 </div>
