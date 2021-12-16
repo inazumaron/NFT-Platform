@@ -7,6 +7,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TradePageComponent } from './pages/trade-page/trade-page.component';
 import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { UploadComponent } from './pages/upload/upload.component';
 
 const routes: Routes = [
   { path: "logIn", component: LogInComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "market", component: MarketComponent},
   { path: "offers", component: OffersComponent},
   { path: "trade", component: TradePageComponent},
+  { path: "upload", component: UploadComponent},
   { path: "transactions", component: TransactionsComponent},
   { path: "", redirectTo: "/logIn", pathMatch: "full" },
 ];

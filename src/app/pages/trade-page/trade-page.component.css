@@ -12,6 +12,7 @@
 .cont {
     background-color: white;
     margin: 20px;
+    min-height: 240px;
 }
 
 .chatBox {

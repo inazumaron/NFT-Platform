@@ -8,6 +8,8 @@ import {Router} from '@angular/router';
 })
 export class MarketComponent implements OnInit {
 
+  isLoading : boolean = false;
+
   data = [
     { 'name': 'nft1', 'price':50, 'seller':'seller1', 'description':'something', 'rating':3},
     { 'name': 'nft2', 'price':45, 'seller':'seller2', 'description':'something', 'rating':2},

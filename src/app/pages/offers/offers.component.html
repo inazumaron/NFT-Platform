@@ -1,1 +1,13 @@
-<p>offers works!</p>
+<div style="margin-bottom: 8px;">
+    <button nz-button (click)="change()">Switch Data</button>
+</div>
+<br>
+<h3 *ngIf="typeShown">Your NFTs</h3>
+<h3 *ngIf="!typeShown">Your offers</h3>
+<nz-list nzItemLayout="horizontal" [nzLoading]="isLoading" [nzBordered]='true'>
+    <div *ngFor="let item of data">
+        <nz-list-item  *ngIf="item.type == typeShown">
+            {{ item.name }}
+        </nz-list-item>
+    </div>
+</nz-list>

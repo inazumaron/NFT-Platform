@@ -1,1 +1,24 @@
-<p>transactions works!</p>
+<h3>Transactions</h3>
+<div class="files">
+    <nz-spin [nzSpinning]="isLoading">
+      <div *ngIf="data.length" nzBordered>
+        <div nz-row *ngFor="let item of data" class="item">
+          <br>
+            <div nz-col nzSpan="2"><i nz-icon nzType="star" nzTheme="outline"></i></div>
+            <div nz-col nzSpan="4">{{ item.name }}</div>
+            <div nz-col nzSpan="4">{{ item.price }}</div>
+            <div nz-col nzSpan="8">{{ item.description }}</div>
+            <div nz-col nzSpan="4">{{ item.seller }}</div>
+            <br>
+            <nz-divider></nz-divider>
+        </div>
+    </div>
+  
+      <div *ngIf="!data.length">
+        <br /><br />
+        <nz-empty
+          (contextmenu)="contextMenuEmpty($event, ctxMenuEmpty)"
+        ></nz-empty>
+      </div>
+    </nz-spin>
+</div>

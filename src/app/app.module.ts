@@ -25,6 +25,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzListModule } from 'ng-zorro-antd/list';
 
 import en from '@angular/common/locales/en';
 import { UploadComponent } from './pages/upload/upload.component';
@@ -58,7 +59,8 @@ registerLocaleData(en);
     NzFormModule,
     NzInputModule,
     NzButtonModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    NzListModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
