@@ -1,0 +1,33 @@
+<div nz-row>
+  <div nz-col nzSpan="2">
+    <h3 nz-typography>Market</h3>
+  </div>
+  <div nz-col nzSpan="2" nzOffset="20">
+    <button nz-button nzType="primary" routerLink="/upload">Upload</button>
+  </div>
+</div>
+<div class="files">
+    <nz-spin [nzSpinning]="isLoading">
+      <div *ngIf="data.length" nzBordered>
+        <div nz-row *ngFor="let item of data" class="item">
+          <br>
+            <div nz-col nzSpan="2"><i nz-icon nzType="star" nzTheme="outline"></i></div>
+            <div nz-col nzSpan="4">{{ item.name }}</div>
+            <div nz-col nzSpan="4">{{ item.price }}</div>
+            <div nz-col nzSpan="4">{{ item.description }}</div>
+            <div nz-col nzSpan="4">{{ item.seller }}</div>
+            <div nz-col nzSpan="4">{{ item.rating }}</div>
+            <div nz-col nzSpan="2"><button nz-button nzType="default" (click)="trade(item)">Offer</button></div>
+            <br>
+            <nz-divider></nz-divider>
+        </div>
+    </div>
+  
+      <div *ngIf="!data.length">
+        <br /><br />
+        <nz-empty
+          (contextmenu)="contextMenuEmpty($event, ctxMenuEmpty)"
+        ></nz-empty>
+      </div>
+    </nz-spin>
+</div>
