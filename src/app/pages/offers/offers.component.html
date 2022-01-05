@@ -7,7 +7,7 @@
 <nz-list nzItemLayout="horizontal" [nzLoading]="isLoading" [nzBordered]='true'>
     <div *ngFor="let item of data">
         <nz-list-item  *ngIf="item.type == typeShown">
-            {{ item.name }}
+            <a (click)="trade(item)">{{ item.name }}</a>
         </nz-list-item>
     </div>
 </nz-list>

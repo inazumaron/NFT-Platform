@@ -22,6 +22,6 @@ export class MarketComponent implements OnInit {
   }
 
   trade(item) {
-    this.route.navigate(['/trade',{name: item.name, price: item.price}]);
+    this.route.navigate(['/trade',{name: item.name, price: item.price, mode: "false"}]);
   }
 }

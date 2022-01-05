@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-offers',
@@ -19,13 +20,20 @@ export class OffersComponent implements OnInit {
     { name: 'nft6', type: false, price: '35', party2: 'Douge'}
   ]
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit() {
   }
 
   change(): void {
     this.typeShown = !this.typeShown;
+  }
+
+  trade(item) {
+    if (!item.type)
+      this.route.navigate(['/trade',{name: item.name, price: item.price, mode:"false"}]);
+    else
+      this.route.navigate(['/trade',{name: item.name, price: item.price, mode:"true"}]);
   }
 
 }
