@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AcctService } from 'src/app/acct.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -12,9 +14,14 @@ export class ProfileComponent implements OnInit {
   Email : string = "Sample Email";
   Wallet : string = "sAmp13_W@l13T";
 
-  constructor() { }
+  constructor(private acctService:AcctService,
+    private route:Router) { }
 
   ngOnInit() {
   }
 
+  logOut() {
+    this.acctService.tempLogOut();
+    this.route.navigate(['/logIn']);
+  }
 }
