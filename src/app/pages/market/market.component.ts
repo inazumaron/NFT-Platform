@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { AcctService } from 'src/app/acct.service';
 
 @Component({
   selector: 'app-market',
@@ -8,7 +9,8 @@ import {Router} from '@angular/router';
 })
 export class MarketComponent implements OnInit {
 
-  isLoading : boolean = false;
+  isLoading : boolean = true;
+  offers : any = [];
 
   data = [
     { 'name': 'nft1', 'price':50, 'seller':'seller1', 'description':'something', 'rating':3},
@@ -16,9 +18,19 @@ export class MarketComponent implements OnInit {
     { 'name': 'nft3', 'price':80, 'seller':'seller3', 'description':'something', 'rating':5}
   ]
 
-  constructor(private route:Router) { }
+  constructor(
+    private route:Router,
+    private service: AcctService) { }
 
   ngOnInit() {
+    try {
+      this.offers = this.service.listOffers();
+      this.isLoading = false;
+    } catch (error) {
+      console.log("error getting list");
+      console.error(error);
+      this.isLoading = false;
+    }
   }
 
   trade(item) {

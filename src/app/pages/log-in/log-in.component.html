@@ -4,14 +4,14 @@
             <nz-form-item>
                 <nz-form-control nzErrorTip="Please input your username!">
                   <nz-input-group nzPrefixIcon="user">
-                    <input type="text" nz-input placeholder="Username" />
+                    <input type="text" nz-input placeholder="Username" [(ngModel)]="username" name="username"/>
                   </nz-input-group>
                 </nz-form-control>
               </nz-form-item>
               <nz-form-item>
                 <nz-form-control nzErrorTip="Please input your Password!">
                   <nz-input-group nzPrefixIcon="lock">
-                    <input type="password" nz-input placeholder="Password" />
+                    <input type="password" nz-input placeholder="Password" [(ngModel)]="password" name="password"/>
                   </nz-input-group>
                 </nz-form-control>
               </nz-form-item>
@@ -25,9 +25,9 @@
                   <a class="login-form-forgot">Forgot password</a>
                 </div>
               </div>
-              <button nz-button class="login-form-button login-form-margin" nzType="'primary'">Log in</button>
+              <button nz-button class="login-form-button login-form-margin" nzType="'primary'" (click)="logIn()">Log in</button>
               Or
-              <a (click)="logIn()">register now!</a>
+              <a routerLink="/register">register now!</a>
         </form>
     </div>
 </div>

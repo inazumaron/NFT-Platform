@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AcctService } from 'src/app/acct.service';
 import {Router} from '@angular/router';
+import { NzNotificationService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-log-in',
@@ -9,14 +10,24 @@ import {Router} from '@angular/router';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private acctService: AcctService,
+  username:string="";
+  password:string="";
+
+  constructor(
+    private notification: NzNotificationService,
+    private acctService: AcctService,
     private route:Router) {}
 
   ngOnInit(): void {
   }
 
-  logIn() {
-    this.acctService.tempLogIn();
-    this.route.navigate(['/market']);
+  async logIn() {
+    try {
+      this.acctService.logIn(this.username, this.password);
+      this.acctService.tempLogIn();
+      this.route.navigate(['/market']);
+    } catch (error) {
+      this.notification.error("Error","Login failed");
+    }
   }
 }

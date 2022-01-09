@@ -4,42 +4,42 @@
             <nz-form-item>
                 <nz-form-control nzErrorTip="Please input your username!">
                   <nz-input-group nzPrefixIcon="user">
-                    <input type="text" nz-input placeholder="Username" />
+                    <input type="text" nz-input placeholder="username" [(ngModel)]="username" name="username"/>
                   </nz-input-group>
                 </nz-form-control>
               </nz-form-item>
               <nz-form-item>
                   <nz-form-control nzErrorTip="Please input your username!">
                     <nz-input-group nzPrefixIcon="user">
-                      <input type="text" nz-input placeholder="Name" />
+                      <input type="text" nz-input placeholder="name" [(ngModel)]="name" name="name"/>
                     </nz-input-group>
                   </nz-form-control>
                 </nz-form-item>
               <nz-form-item>
                 <nz-form-control nzErrorTip="Please input your Password!">
                   <nz-input-group nzPrefixIcon="lock">
-                    <input type="password" nz-input placeholder="Password" />
+                    <input type="password" nz-input placeholder="password" [(ngModel)]="password" name="password"/>
                   </nz-input-group>
                 </nz-form-control>
               </nz-form-item>
               <nz-form-item>
                 <nz-form-control nzErrorTip="Please input your Password again!">
                   <nz-input-group nzPrefixIcon="lock">
-                    <input type="password" nz-input placeholder="Password again" />
+                    <input type="password" nz-input placeholder="password again" [(ngModel)]="password_rep" name="password_rep"/>
                   </nz-input-group>
                 </nz-form-control>
               </nz-form-item>
               <nz-form-item>
                   <nz-form-control nzErrorTip="Please input your username!">
                     <nz-input-group nzPrefixIcon="user">
-                      <input type="text" nz-input placeholder="Email" />
+                      <input type="text" nz-input placeholder="email" [(ngModel)]="email" name="email"/>
                     </nz-input-group>
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
                     <nz-form-control nzErrorTip="Please input your username!">
                       <nz-input-group nzPrefixIcon="user">
-                        <input type="text" nz-input placeholder="Wallet" />
+                        <input type="text" nz-input placeholder="WalletID" [(ngModel)]="walletID" name="walletID"/>
                       </nz-input-group>
                     </nz-form-control>
                   </nz-form-item>
@@ -48,7 +48,7 @@
                     <button nz-button class="login-form-button login-form-margin" nzType="default" routerLink="/logIn">Back</button>
                   </div>
                   <div nz-col nzSpan="4" nzOffset="16">
-                    <button nz-button class="login-form-button login-form-margin pos-right" nzType="primary">Register</button>
+                    <button nz-button class="login-form-button login-form-margin pos-right" nzType="primary" (click)="wrapper()">Register</button>
                   </div>
                 </div>
         </form>
