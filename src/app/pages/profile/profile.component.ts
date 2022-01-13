@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
     private route:Router) { }
 
   ngOnInit() {
+    /*
     try {
       var data = this.acctService.getSelf();
       this.userName = data['username'];
@@ -28,7 +29,7 @@ export class ProfileComponent implements OnInit {
     } catch (error) {
       console.error(error);
       console.error("could not retrieve data");
-    }
+    }*/
     
   }
 

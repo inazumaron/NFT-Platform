@@ -9,20 +9,20 @@
     <br>
     <div nz-col nzSpan="8" nzOffset="2" class="bgGray medHeight">
         <div class="cont">
-            <div *ngIf="price.length && seller=='false'">
+            <div *ngIf="price.length && seller=='false'" class="priceBox">
                 {{ price }}
             </div>
-            <div *ngIf="item.length && seller=='true'">
+            <div *ngIf="item.length && seller=='true'" class="nftBox">
                 {{ item }}
             </div>
         </div>
     </div>
     <div nz-col nzSpan="8" nzOffset="4" class="bgGray medHeight">
         <div class="cont">
-            <div *ngIf="price.length && seller=='true'">
+            <div *ngIf="price.length && seller=='true'" class="priceBox">
                 {{ price }}
             </div>
-            <div *ngIf="item.length && seller=='false'">
+            <div *ngIf="item.length && seller=='false'" class="nftBox">
                 {{ item }}
             </div>
         </div>
@@ -35,13 +35,20 @@
     <div nz-col nzSpan="16" nzOffset="4" class="bgGray medHeight">
         <div nz-row>
             <div nz-col nzSpan="22" nzOffset="1" class="chatBox">
-                Chat goes here
+                <div *ngIf="!chat_temp.length">
+                    Chat goes here
+                </div>
+                <div *ngIf="chat_temp.length">
+                    <div *ngFor="let itemX of chat_temp">
+                        {{ itemX }}
+                    </div>
+                </div>
             </div>
             <div nz-col nzSpan="20" nzOffset="1">
-                <input type="text" nz-input placeholder="Input here to chat" />
+                <input type="text" nz-input placeholder="Input here to chat" [(ngModel)]="chat_cont" name="chat_cont" />
             </div>
             <div nz-col nzSpan="2">
-                <button nz-button nzType = "default">Send</button>
+                <button nz-button nzType = "default" (click)="addChat()">Send</button>
             </div>
         </div>
     </div>

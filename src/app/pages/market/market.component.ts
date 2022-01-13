@@ -9,13 +9,13 @@ import { AcctService } from 'src/app/acct.service';
 })
 export class MarketComponent implements OnInit {
 
-  isLoading : boolean = true;
+  isLoading : boolean = false;
   offers : any = [];
 
-  data = [
-    { 'name': 'nft1', 'price':50, 'seller':'seller1', 'description':'something', 'rating':3},
-    { 'name': 'nft2', 'price':45, 'seller':'seller2', 'description':'something', 'rating':2},
-    { 'name': 'nft3', 'price':80, 'seller':'seller3', 'description':'something', 'rating':5}
+  sample_data = [
+    { 'nft_id': 'nft1', 'amount':50, 'seller':'seller1', 'buyer':'description here', 'createdAt':'10/21/21'},
+    { 'nft_id': 'nft2', 'amount':45, 'seller':'seller2', 'buyer':'description here', 'createdAt':'10/8/21'},
+    { 'nft_id': 'nft3', 'amount':80, 'seller':'seller3', 'buyer':'description here', 'createdAt':'9/13/21'}
   ]
 
   constructor(
@@ -23,6 +23,8 @@ export class MarketComponent implements OnInit {
     private service: AcctService) { }
 
   ngOnInit() {
+    this.offers = this.sample_data;
+    /*
     try {
       this.offers = this.service.listOffers();
       this.isLoading = false;
@@ -30,10 +32,10 @@ export class MarketComponent implements OnInit {
       console.log("error getting list");
       console.error(error);
       this.isLoading = false;
-    }
+    }*/
   }
 
   trade(item) {
-    this.route.navigate(['/trade',{name: item.name, price: item.price, mode: "false"}]);
+    this.route.navigate(['/trade',{name: item.nft_id, price: item.amount, mode: "false"}]);
   }
 }

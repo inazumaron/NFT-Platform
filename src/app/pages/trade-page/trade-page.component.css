@@ -22,3 +22,15 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.priceBox {
+    font-size: 5vh;
+    text-align: center;
+    padding-top: 5vh;
+}
+
+.nftBox {
+    font-size: 5vh;
+    text-align: center;
+    padding-top: 5vh;
+}

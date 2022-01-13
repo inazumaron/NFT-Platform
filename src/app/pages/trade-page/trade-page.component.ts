@@ -12,6 +12,8 @@ export class TradePageComponent implements OnInit {
   price:string = "";
   seller:string = "";
   transactionId: string = "";
+  chat_temp: any = [];
+  chat_cont: string = "";
 
   constructor(private route:ActivatedRoute) { }
 
@@ -23,6 +25,13 @@ export class TradePageComponent implements OnInit {
 
   saveTID() {
     this.item = this.transactionId;
+  }
+
+  addChat() {
+    this.chat_temp.push("You: "+this.chat_cont);
+    if (this.chat_temp.length > 9)
+      this.chat_temp.shift();
+    this.chat_cont = "";
   }
 
 }
